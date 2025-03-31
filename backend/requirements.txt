@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+gunicorn
+openai
+pinecone
+sqlalchemy
+asyncpg
+python-dotenv
+pyngrok
