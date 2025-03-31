@@ -1,0 +1,286 @@
+:root {
+  --accent: #ff4c4c;
+  --text: #ffffff;
+  --background: #000000;
+  --glass: rgba(255, 255, 255, 0.05);
+  --font: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  background: var(--background);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+video.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.15;
+}
+
+.container {
+  width: 95%;
+  max-width: 850px;
+  background: var(--glass);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(25px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Transparent, pill-shaped tab buttons */
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 9999px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+
+/* Hover state for tab buttons */
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Active tab button style */
+.tab-btn.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.search-box {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* Scrollable result area */
+.result {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Preformatted text wrapping */
+.result pre {
+  white-space: pre-wrap;      /* Wrap the text */
+  word-wrap: break-word;      /* Break long words if needed */
+  overflow-x: hidden;         /* Ensure no horizontal scrolling */
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 10px;
+  color: #ddd;
+}
+
+/* Transparent, pill-shaped action buttons */
+button.action,
+#enterDashboard {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 9999px;                 
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: none;
+}
+
+button.action:hover,
+#enterDashboard:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+pre {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  color: #ddd;
+}
+.info-block {
+  margin-bottom: 1.5rem;
+}
+
+h4, h5 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+p, li {
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.pill {
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.pill.green {
+  background: rgba(0, 255, 0, 0.2);
+  color: #8aff8a;
+}
+
+.pill.red {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ff8080;
+}
+
+.pill.yellow {
+  background: rgba(255, 255, 0, 0.2);
+  color: #fff56b;
+}
+
+.bar-container {
+  background: rgba(255, 255, 255, 0.05);
+  height: 10px;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.bar {
+  background: var(--accent);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.bar-label {
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+/* Container for the 3-dot loader */
+.three-dot-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* space between dots */
+}
+
+/* Each dot */
+.dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: #fff;   /* White dots */
+  border-radius: 50%;       /* Circle shape */
+  animation: dotBounce 0.6s infinite alternate;
+}
+
+/* Delay each dot so they bounce in sequence */
+.dot1 {
+  animation-delay: 0s;
+}
+.dot2 {
+  animation-delay: 0.2s;
+}
+.dot3 {
+  animation-delay: 0.4s;
+}
+
+/* Keyframes for the bounce effect */
+@keyframes dotBounce {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-8px); /* how high the dots bounce */
+    opacity: 0.3;               /* fade slightly as they move up */
+  }
+}
+.loading-indicator {
+  display: none;            /* Hidden by default; show via JS */
+  position: fixed;          /* Stay in one place while scrolling */
+  top: 20px;
+  right: 20px;
+  z-index: 9999;            /* On top of other elements */
+  background: transparent;  /* Or rgba(0,0,0,0.3) if you want a semi-transparent panel */
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Make the greeting bigger, but keep it right under the title */
+#startScreen #greeting {
+  font-size: 1.5rem; 
+  margin-bottom: 2rem; /* adds spacing before the button */
+}
+
+/* Center the button horizontally (text-align: center on parent is enough).
+   You can also tweak its size/padding as you like. */
+#startScreen #enterDashboard {
+  display: inline-block; 
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  position: center;
+}

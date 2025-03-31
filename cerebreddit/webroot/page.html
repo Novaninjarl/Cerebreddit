@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cerebreddit AI Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="original-d940fb9b7d53542e0d887c1e08b60571.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Start Screen Overlay -->
+  <div id="startScreen" class="start-screen">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="original-467ee74307081d3115d041a055400948.mp4" type="video/mp4" />
+    </video>
+    <div class="start-content">
+      <h1>Welcome to Cerebreddit</h1>
+      <p id="greeting">Hello, User</p>
+      <button id="enterDashboard">Enter Dashboard</button>
+    </div>
+  </div>
+
+  <div class="container" id="dashboardContainer" style="display:none;">
+    <h1>Cerebreddit</h1>
+    <h3>Logged in as <span id="username"></span></h3>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="search">Search</button>
+      <button class="tab-btn" data-tab="insight">Insight</button>
+      <button class="tab-btn" data-tab="user">User</button>
+      <button class="tab-btn" data-tab="postExplanation" id="PostExplainer">Explanation</button>
+      <button class="tab-btn" data-tab="modReply" id="ModReplyer">Mod reply</button>
+    </div>
+
+    <!-- Global text input remains visible for dynamic placeholder updates -->
+    <div class="search-box">
+      <input type="text" id="searchQuery" placeholder="Enter post text...">
+    </div>
+
+    <!-- Search Panel -->
+    <div id="search-panel" class="tab-panel active">
+      <input type="file" id="searchImage" accept="image/*" multiple>
+      <button class="action" id="btnSearchPosts">Search Posts</button>
+      <button class="action" id="btnPrevMatch">Backward</button>
+      <button class="action" id="btnNextMatch">Forward</button>
+      <button class="action" id="btnMatch">Found</button>
+      <div id="searchResults" class="result"></div>
+    </div>
+    
+
+    <!-- Insight Panel -->
+    <div id="insight-panel" class="tab-panel">
+      <button class="action" id="btnFetchInsight">Show Subreddit Insight</button>
+      <div id="subredditInsight" class="result"></div>
+    </div>
+
+    <!-- User Panel -->
+    <div id="user-panel" class="tab-panel">
+      <button class="action" id="btnAnalyzeUser">Analyze User</button>
+      <button class="action" id="btnFetchBots">Bot meter</button>
+      <div id="userAnalysis" class="result"></div>
+    </div>
+      <!-- Post Explanation Panel -->
+  <div id="postExplanation-panel" class="tab-panel">
+    <div id="postExplanationContent" class="result"></div>
+  </div>
+
+  <!-- Mod Reply Panel -->
+  <div id="modReply-panel" class="tab-panel">
+    <div id="modReplyContent" class="result"></div>
+  </div>
+
+
+  <script src="script.js"></script>
+  <div id="loadingIndicator" class="loading-indicator">
+    <div class="three-dot-loader">
+      <div class="dot dot1"></div>
+      <div class="dot dot2"></div>
+      <div class="dot dot3"></div>
+    </div>
+  </div>
+</body>
+</html>
